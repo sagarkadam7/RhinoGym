@@ -31,7 +31,7 @@ export default function Membership() {
               className={cn(
                 "relative flex flex-col border p-8 md:p-10 card-hover",
                 plan.highlighted
-                  ? "bg-rhino-orange/10 border-rhino-orange scale-100 md:scale-105 z-10"
+                  ? "bg-rhino-orange/10 border-rhino-orange md:scale-[1.03] z-10"
                   : "bg-rhino-gray border-white/5"
               )}
             >

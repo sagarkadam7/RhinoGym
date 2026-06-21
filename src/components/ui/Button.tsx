@@ -49,6 +49,7 @@ export default function Button({
     return (
       <Link
         href={href}
+        onClick={onClick}
         className={classes}
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >

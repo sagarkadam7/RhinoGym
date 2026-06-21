@@ -1,13 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import { galleryImages } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export default function Gallery() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
     <section id="gallery" className="section-padding bg-rhino-black">
       <div className="container-custom">
@@ -28,13 +23,12 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] sm:auto-rows-[200px] md:auto-rows-[250px]">
           {galleryImages.map((image, i) => (
-            <button
+            <div
               key={i}
-              onClick={() => setActiveIndex(activeIndex === i ? null : i)}
               className={cn(
-                "relative overflow-hidden group cursor-pointer rounded-sm",
+                "relative overflow-hidden group rounded-sm",
                 image.span === "large" ? "col-span-2 row-span-2" : "col-span-1"
               )}
             >
@@ -50,13 +44,12 @@ export default function Gallery() {
                 }
               />
               <div className="absolute inset-0 bg-rhino-black/0 group-hover:bg-rhino-black/40 transition-colors duration-300" />
-              <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 max-md:opacity-100 transition-opacity duration-300">
                 <span className="text-xs tracking-wider uppercase text-white/80">
                   {image.alt}
                 </span>
               </div>
-              <div className="absolute top-3 right-3 w-8 h-8 border border-rhino-orange/0 group-hover:border-rhino-orange/60 transition-colors duration-300" />
-            </button>
+            </div>
           ))}
         </div>
       </div>

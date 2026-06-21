@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-0"
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -46,7 +46,7 @@ export default function Hero() {
           {siteConfig.tagline}
         </p>
 
-        <div className="flex items-center justify-center gap-3 mb-10 animate-fade-up">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 mb-10 animate-fade-up">
           {siteConfig.pillars.map((pillar, i) => (
             <span key={pillar} className="flex items-center gap-3">
               <span className="text-sm md:text-base tracking-[0.2em] uppercase text-white/50">

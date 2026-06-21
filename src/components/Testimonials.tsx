@@ -35,7 +35,7 @@ export default function Testimonials() {
         <div className="max-w-4xl mx-auto relative">
           <Quote className="w-12 h-12 text-rhino-orange/20 absolute -top-4 left-0" />
 
-          <div className="min-h-[200px] flex items-center">
+          <div className="min-h-[220px] relative flex items-center justify-center">
             {testimonials.map((testimonial, i) => (
               <div
                 key={i}
@@ -62,8 +62,9 @@ export default function Testimonials() {
 
           <div className="flex items-center justify-center gap-4 mt-10">
             <button
+              type="button"
               onClick={prev}
-              className="p-2 border border-white/10 hover:border-rhino-orange hover:text-rhino-orange transition-colors"
+              className="p-3 border border-white/10 hover:border-rhino-orange hover:text-rhino-orange transition-colors touch-manipulation"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
@@ -72,8 +73,9 @@ export default function Testimonials() {
               {testimonials.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-3 h-3 rounded-full transition-colors touch-manipulation ${
                     i === current ? "bg-rhino-orange" : "bg-white/20"
                   }`}
                   aria-label={`Go to testimonial ${i + 1}`}
@@ -81,8 +83,9 @@ export default function Testimonials() {
               ))}
             </div>
             <button
+              type="button"
               onClick={next}
-              className="p-2 border border-white/10 hover:border-rhino-orange hover:text-rhino-orange transition-colors"
+              className="p-3 border border-white/10 hover:border-rhino-orange hover:text-rhino-orange transition-colors touch-manipulation"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
