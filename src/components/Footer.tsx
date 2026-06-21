@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Instagram, MapPin } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/constants";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,14 +13,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="#home" className="flex items-center gap-3 mb-6">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden bg-white">
-                <Image
-                  src="/images/logo.png"
-                  alt={siteConfig.name}
-                  fill
-                  className="object-cover p-1"
-                />
-              </div>
+              <Logo size="lg" />
               <div>
                 <span className="font-display text-2xl tracking-wider leading-none block">
                   RHINO

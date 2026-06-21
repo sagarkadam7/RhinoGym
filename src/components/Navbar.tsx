@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/constants";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -36,15 +36,7 @@ export default function Navbar() {
     >
       <nav className="container-custom flex items-center justify-between">
         <Link href="#home" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden bg-white ring-2 ring-transparent group-hover:ring-rhino-orange transition-all duration-300">
-            <Image
-              src="/images/logo.png"
-              alt={siteConfig.name}
-              fill
-              className="object-cover p-1"
-              priority
-            />
-          </div>
+          <Logo size="md" ring priority />
           <div className="hidden sm:block">
             <span className="font-display text-2xl tracking-wider leading-none block">
               RHINO
@@ -99,14 +91,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3"
           >
-            <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white">
-              <Image
-                src="/images/logo.png"
-                alt={siteConfig.name}
-                fill
-                className="object-cover p-1"
-              />
-            </div>
+            <Logo size="md" />
             <span className="font-display text-2xl tracking-wider">RHINO</span>
           </Link>
           <button
